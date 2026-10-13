@@ -38,5 +38,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "m8test-gradle-templates"
+rootProject.name = "m8test-groovy-template"
 include(":groovy")
