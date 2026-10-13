@@ -2,12 +2,18 @@
   "manifestVersion": 1,
   "protocolVersion": "2.0.0",
   "requestId": "groovy-template-generated-dex",
-  "extensionId": "com.m8test.extension.language.groovy",
-  "languageEntryId": "groovy",
   "fileName": "main.groovy",
   "scriptFile": "main.groovy",
   "timeoutMillis": 30000,
   "properties": {},
   "components": [],
-  "expectedLogs": ["test-control-groovy-generated-dex:passed"]
+  "expectedLogs": [
+    "test-control-groovy-generated-dex:passed"
+  ],
+  "language": {
+    "groupId": "com.m8test.language",
+    "artifactId": "groovy",
+    "version": "0.1.11",
+    "languageEntryId": "groovy"
+  }
 }
