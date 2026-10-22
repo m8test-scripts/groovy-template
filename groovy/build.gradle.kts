@@ -15,6 +15,15 @@ val ocrVersion: String by project
 val languagePluginVersion: String by project
 // m8testGroovy 闭包用于配置 m8test groovy 项目
 m8testGroovy {
+    apkBuild {
+        isEnabled = true
+        launchMode = "automatic"
+        signingMode = providers.gradleProperty("m8test.apkSigningMode").orElse("development").get()
+        releaseKeyStore = providers.gradleProperty("m8test.releaseKeyStore").orNull?.let(::file)
+        releaseKeyAlias = providers.gradleProperty("m8test.releaseKeyAlias").orNull
+        releaseStorePassword = providers.gradleProperty("m8test.releaseStorePasswordEnv").orNull?.let(providers::environmentVariable)
+        releaseKeyPassword = providers.gradleProperty("m8test.releaseKeyPasswordEnv").orNull?.let(providers::environmentVariable)
+    }
     // 可选：显式指定宿主工具路径；未配置时从 Android SDK、PATH 和环境变量自动发现
 //    properties["ADB_PATH"] = "/opt/android-sdk/platform-tools/adb"
 //    properties["SCRCPY_PATH"] = "/usr/bin/scrcpy"
@@ -31,11 +40,6 @@ m8testGroovy {
         adbPort = 5555
         // 安卓设备调试器服务启动的端口
         debuggerPort = 5354
-        // 打包apk时的运行时模板apk配置, 打包apk时会将脚本项目打包到该模板apk中
-        runtimeConfig {
-            // 模板apk的版本
-            version = m8testVersion
-        }
         // M8Test 开发工具配置闭包
         developmentKitConfig {
             // 开发工具的包名, 使用默认就好
@@ -64,7 +68,10 @@ m8testGroovy {
         // 辅助脚本，会在入口文件中自动启动这些脚本, 需要是相对于src目录的路径
         sides = mutableListOf("com/example/script/side1.groovy", "com/example/script/side2.groovy")
         // 脚本项目包名, 和java包名规则一样
+        name = providers.gradleProperty("appName").orElse("Groovy Script").get()
         packageName = "com.example.script.groovy"
+        versionName = providers.gradleProperty("appVersionName").orElse("1.0.1").get()
+        versionCode = providers.gradleProperty("appVersionCode").map { it.toInt() }.orElse(1).get()
         // 脚本项目logo配置, 这里是相对于 res 目录的路径
         logo = "logo.png"
         // 在脚本项目中引用 M8Test 组件
