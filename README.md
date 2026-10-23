@@ -86,8 +86,7 @@
 
 ## BuildProjectSource 与外置 Groovy Extension
 
-Groovy 模板使用 `isPluginsBundled = false`，由 Development Kit 从
-`com.m8test.extension.language.groovy` 的本地 Extension cache 解析语言 APK。
+Groovy 模板使用 `isPluginsBundled = false` 控制常规项目构建时的依赖复制。APK 的 Extension 打包则由 `apkBuild.bundleExtensions` 单独控制，默认启用。
 `com.m8test.capability.language.groovy` 是运行时 capability ID；它与 Extension
 ID 的作用不同，不能互换。
 
@@ -102,6 +101,9 @@ ID 的作用不同，不能互换。
 
 Groovy 模板的主脚本、side 脚本和工具类都使用 `$logger`/`Logger`，不再依赖旧的
 `$console`、`Console` 或 `.log` 入口。
+
+
+默认会把项目声明的 Extension 依赖及其传递依赖一并嵌入 APK，安装后无需联网即可运行。若要减小 APK 体积，可在 `apkBuild` 中设置 `bundleExtensions = false`；此时运行环境必须已安装所需 Extension，或能够从配置的 Maven 仓库下载。
 
 ## APK 启动策略
 
