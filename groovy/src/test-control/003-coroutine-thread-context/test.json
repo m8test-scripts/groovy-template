@@ -1,0 +1,33 @@
+{
+  "manifestVersion": 1,
+  "protocolVersion": "2.0.0",
+  "requestId": "groovy-template-coroutine-thread-context",
+  "fileName": "main.groovy",
+  "scriptFile": "main.groovy",
+  "timeoutMillis": 30000,
+  "properties": {
+    "m8test.testControl.adbPort": "5555"
+  },
+  "components": [],
+  "expectedLogs": [
+    "coroutine:groovy:script-main-verified",
+    "coroutine:groovy:io-captured-value-verified",
+    "coroutine:groovy:other-task-progressed",
+    "coroutine:groovy:delayed-captured-value-verified",
+    "coroutine:groovy:launch",
+    "coroutine:groovy:async",
+    "coroutine:groovy:async-success",
+    "coroutine:groovy:with-context",
+    "coroutine:groovy:flow:1",
+    "coroutine:groovy:flow:2",
+    "coroutine:groovy:flow-complete",
+    "coroutine:groovy:cancelled-work-complete",
+    "coroutine:groovy:gate"
+  ],
+  "language": {
+    "groupId": "com.m8test.language",
+    "artifactId": "groovy",
+    "version": "0.1.11",
+    "languageEntryId": "groovy"
+  }
+}

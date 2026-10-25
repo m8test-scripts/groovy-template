@@ -1,0 +1,31 @@
+{
+  "manifestVersion": 1,
+  "protocolVersion": "2.0.0",
+  "requestId": "groovy-template-coroutine-cancellation-composition",
+  "fileName": "main.groovy",
+  "scriptFile": "main.groovy",
+  "timeoutMillis": 30000,
+  "properties": {
+    "m8test.testControl.adbPort": "5555"
+  },
+  "components": [],
+  "expectedLogs": [
+    "coroutine:groovy:timeout-cancellation-preserved",
+    "coroutine:groovy:timeout-or-null-ok",
+    "coroutine:groovy:timeout-or-null-complete",
+    "coroutine:groovy:loop-timeout-cancelled-wait",
+    "coroutine:groovy:loop-iteration:1",
+    "coroutine:groovy:loop-iteration:2",
+    "coroutine:groovy:loop-iteration:3",
+    "coroutine:groovy:loop-completed-count:3",
+    "coroutine:groovy:composed-wait-ok",
+    "coroutine:groovy:composed-wait-complete",
+    "coroutine:groovy:cancellation-gate"
+  ],
+  "language": {
+    "groupId": "com.m8test.language",
+    "artifactId": "groovy",
+    "version": "0.1.11",
+    "languageEntryId": "groovy"
+  }
+}

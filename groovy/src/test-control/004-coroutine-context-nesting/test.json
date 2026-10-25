@@ -1,0 +1,13 @@
+{
+  "manifestVersion": 1,
+  "protocolVersion": "2.0.0",
+  "requestId": "groovy-template-coroutine-context-nesting",
+  "fileName": "main.groovy",
+  "scriptFile": "main.groovy",
+  "timeoutMillis": 30000,
+  "properties": { "m8test.testControl.adbPort": "5555" },
+  "components": [],
+  "expectedLogs": ["nest:groovy:outer-started", "nest:groovy:outer-resumed", "nest:groovy:inner-callback", "nest:groovy:other-task-progressed", "nest:groovy:delay-resumed", "nest:groovy:gate"],
+  "expectedOutcome": "succeeded",
+  "language": { "groupId": "com.m8test.language", "artifactId": "groovy", "version": "0.1.11", "languageEntryId": "groovy" }
+}

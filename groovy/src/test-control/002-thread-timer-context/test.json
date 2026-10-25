@@ -1,0 +1,27 @@
+{
+  "manifestVersion": 1,
+  "protocolVersion": "2.0.0",
+  "requestId": "groovy-template-thread-timer-context",
+  "fileName": "main.groovy",
+  "scriptFile": "main.groovy",
+  "timeoutMillis": 30000,
+  "properties": {
+    "m8test.testControl.adbPort": "5555"
+  },
+  "components": [],
+  "expectedLogs": [
+    "thread-context:groovy:immediate",
+    "thread-context:groovy:timeout",
+    "thread-context:groovy:interval",
+    "thread-context:groovy:thread",
+    "thread-context:groovy:thread-start",
+    "thread-context:groovy:thread-exit",
+    "thread-context:groovy:verified"
+  ],
+  "language": {
+    "groupId": "com.m8test.language",
+    "artifactId": "groovy",
+    "version": "0.1.11",
+    "languageEntryId": "groovy"
+  }
+}
