@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "source": "https://github.com/m8test-core/skills.git",
   "declarationSha256": "c1218cea4ad26d65f663b953ee98c5d6ea68765c63071be528017add49204b6c",
-  "commit": "6051455d5529710491e2f068ce8f1490b3eb8250",
+  "commit": "134b0bfccf87d03b65856a321db7cb8417fdccef",
   "skills": [
     {
       "path": "skills/writing-commit-messages",
@@ -32,6 +32,12 @@
       "path": "skills/developing-script-projects",
       "installName": "developing-script-projects",
       "sha256": "99b2f46dd12aee6209807eb35351831027df9576d563878878528f82f7bdfddc",
+      "executableFiles": []
+    },
+    {
+      "path": "skills/developing-webview-automation",
+      "installName": "developing-webview-automation",
+      "sha256": "279bdaaa87aa69138ca6ebfdf91ec0abbaa28db51b82e6eab01a6968bd0471fc",
       "executableFiles": []
     },
     {
